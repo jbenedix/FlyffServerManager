@@ -1,6 +1,6 @@
 # Flyff Server Manager
-This simple Client allows you to start, restart and stop your Flyff Server easily without clicking on each Executable
-
+This simple Client allows you to start, restart and stop your Flyff Server easily without clicking on each Executable<br>
+![alt text](image.png)<br>
 ## The Configuration
 There is a reason you have to define the path to each Server. Not every Server has the same Folder structure where the files are stored.
 So the config looks like this:
@@ -15,6 +15,9 @@ cache=D:\FlyffDev\Ketchup\Server\Program\6.Cache.exe
 world=D:\FlyffDev\Ketchup\Server\Resource\7.World.exe
 
 scriptFolder=D:\FlyffDev\Ketchup\Server\Script
+
+#The time the client waits after it starts a server
+waitingTimeBetweenStarts=2000
 
 #Path Client
 client=D:\FlyffDev\Ketchup\Client\start.bat
