@@ -56,9 +56,17 @@
             button4 = new Button();
             button5 = new Button();
             groupBox1 = new GroupBox();
+            button_client_ini = new Button();
             Status_Client = new Panel();
             label8 = new Label();
             textBox_Client = new TextBox();
+            button_account_ini = new Button();
+            button_certifier_ini = new Button();
+            button_database_ini = new Button();
+            button_core_ini = new Button();
+            button_login_ini = new Button();
+            button_cache_ini = new Button();
+            button_world_ini = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -291,6 +299,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(button_client_ini);
             groupBox1.Controls.Add(Status_Client);
             groupBox1.Controls.Add(button5);
             groupBox1.Controls.Add(label8);
@@ -303,6 +312,16 @@
             groupBox1.TabIndex = 22;
             groupBox1.TabStop = false;
             groupBox1.Text = "Client";
+            // 
+            // button_client_ini
+            // 
+            button_client_ini.Location = new Point(375, 34);
+            button_client_ini.Name = "button_client_ini";
+            button_client_ini.Size = new Size(43, 23);
+            button_client_ini.TabIndex = 30;
+            button_client_ini.Text = "ini";
+            button_client_ini.UseVisualStyleBackColor = true;
+            button_client_ini.Click += button_client_ini_Click;
             // 
             // Status_Client
             // 
@@ -328,11 +347,88 @@
             textBox_Client.Size = new Size(341, 23);
             textBox_Client.TabIndex = 23;
             // 
-            // Form1
+            // button_account_ini
+            // 
+            button_account_ini.Location = new Point(401, 54);
+            button_account_ini.Name = "button_account_ini";
+            button_account_ini.Size = new Size(43, 23);
+            button_account_ini.TabIndex = 23;
+            button_account_ini.Text = "ini";
+            button_account_ini.UseVisualStyleBackColor = true;
+            button_account_ini.Click += button_account_ini_Click;
+            // 
+            // button_certifier_ini
+            // 
+            button_certifier_ini.Location = new Point(401, 100);
+            button_certifier_ini.Name = "button_certifier_ini";
+            button_certifier_ini.Size = new Size(43, 23);
+            button_certifier_ini.TabIndex = 24;
+            button_certifier_ini.Text = "ini";
+            button_certifier_ini.UseVisualStyleBackColor = true;
+            button_certifier_ini.Click += button_certifier_ini_Click;
+            // 
+            // button_database_ini
+            // 
+            button_database_ini.Location = new Point(401, 146);
+            button_database_ini.Name = "button_database_ini";
+            button_database_ini.Size = new Size(43, 23);
+            button_database_ini.TabIndex = 25;
+            button_database_ini.Text = "ini";
+            button_database_ini.UseVisualStyleBackColor = true;
+            button_database_ini.Click += button_database_ini_Click;
+            // 
+            // button_core_ini
+            // 
+            button_core_ini.Location = new Point(401, 192);
+            button_core_ini.Name = "button_core_ini";
+            button_core_ini.Size = new Size(43, 23);
+            button_core_ini.TabIndex = 26;
+            button_core_ini.Text = "ini";
+            button_core_ini.UseVisualStyleBackColor = true;
+            button_core_ini.Click += button_core_ini_Click;
+            // 
+            // button_login_ini
+            // 
+            button_login_ini.Location = new Point(401, 239);
+            button_login_ini.Name = "button_login_ini";
+            button_login_ini.Size = new Size(43, 23);
+            button_login_ini.TabIndex = 27;
+            button_login_ini.Text = "ini";
+            button_login_ini.UseVisualStyleBackColor = true;
+            button_login_ini.Click += button_login_ini_Click;
+            // 
+            // button_cache_ini
+            // 
+            button_cache_ini.Location = new Point(401, 285);
+            button_cache_ini.Name = "button_cache_ini";
+            button_cache_ini.Size = new Size(43, 23);
+            button_cache_ini.TabIndex = 28;
+            button_cache_ini.Text = "ini";
+            button_cache_ini.UseVisualStyleBackColor = true;
+            button_cache_ini.Click += button_cache_ini_Click;
+            // 
+            // button_world_ini
+            // 
+            button_world_ini.Location = new Point(401, 331);
+            button_world_ini.Name = "button_world_ini";
+            button_world_ini.Size = new Size(43, 23);
+            button_world_ini.TabIndex = 29;
+            button_world_ini.Text = "ini";
+            button_world_ini.UseVisualStyleBackColor = true;
+            button_world_ini.Click += button_world_ini_Click;
+            // 
+            // Main
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1043, 608);
+            Controls.Add(button_world_ini);
+            Controls.Add(button_cache_ini);
+            Controls.Add(button_login_ini);
+            Controls.Add(button_core_ini);
+            Controls.Add(button_database_ini);
+            Controls.Add(button_certifier_ini);
+            Controls.Add(button_account_ini);
             Controls.Add(groupBox1);
             Controls.Add(button2);
             Controls.Add(Status_World);
@@ -358,8 +454,8 @@
             Controls.Add(textBox_Account);
             Controls.Add(btn_stopServer);
             Controls.Add(button1);
-            Name = "Form1";
-            Text = "Form1";
+            Name = "Main";
+            Text = "Flyff Server Manager";
             Load += Form1_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
@@ -400,5 +496,13 @@
         private Panel Status_Client;
         private Label label8;
         private TextBox textBox_Client;
+        private Button button_account_ini;
+        private Button button_certifier_ini;
+        private Button button_database_ini;
+        private Button button_core_ini;
+        private Button button_login_ini;
+        private Button button_cache_ini;
+        private Button button_client_ini;
+        private Button button_world_ini;
     }
 }

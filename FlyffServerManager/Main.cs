@@ -12,6 +12,7 @@ namespace FlyffServerManager
         public string login { get; set; }
         public string cache { get; set; }
         public string world { get; set; }
+        public string scriptFolder { get; set; }
 
         public string client { get; set; }
 
@@ -238,8 +239,52 @@ namespace FlyffServerManager
                     {
                         client = line.Split("=").Last();
                     }
+                    else if (line.Split('=').First() == "scriptFolder")
+                    {
+                        scriptFolder = line.Split("=").Last();
+                    }
                 }
             }
+        }
+
+        private void button_account_ini_Click(object sender, EventArgs e)
+        {
+            Process.Start("notepad", Path.GetDirectoryName(account) + @"\AccountServer.ini");
+        }
+
+        private void button_certifier_ini_Click(object sender, EventArgs e)
+        {
+            Process.Start("notepad", Path.GetDirectoryName(account) + @"\Certifier.ini");
+        }
+
+        private void button_database_ini_Click(object sender, EventArgs e)
+        {
+            Process.Start("notepad", scriptFolder + @"\DatabaseServer.ini");
+        }
+
+        private void button_core_ini_Click(object sender, EventArgs e)
+        {
+            Process.Start("notepad", Path.GetDirectoryName(account) + @"\CoreServer.ini");
+        }
+
+        private void button_login_ini_Click(object sender, EventArgs e)
+        {
+            Process.Start("notepad", Path.GetDirectoryName(account) + @"\loginserver.ini");
+        }
+
+        private void button_cache_ini_Click(object sender, EventArgs e)
+        {
+            Process.Start("notepad", Path.GetDirectoryName(account) + @"\CacheServer.ini");
+        }
+
+        private void button_world_ini_Click(object sender, EventArgs e)
+        {
+            Process.Start("notepad", scriptFolder + @"\WorldServer.ini");
+        }
+
+        private void button_client_ini_Click(object sender, EventArgs e)
+        {
+            Process.Start("notepad", Path.GetDirectoryName(client) + @"\neuz.ini");
         }
     }
 }
