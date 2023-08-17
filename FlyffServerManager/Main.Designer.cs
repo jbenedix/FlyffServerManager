@@ -67,32 +67,44 @@
             button_login_ini = new Button();
             button_cache_ini = new Button();
             button_world_ini = new Button();
+            groupBox2 = new GroupBox();
+            button6 = new Button();
+            textBox_waitingTime = new TextBox();
+            label9 = new Label();
+            groupBox3 = new GroupBox();
+            button7 = new Button();
             groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
+            groupBox3.SuspendLayout();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.Location = new Point(54, 376);
+            button1.BackColor = Color.DarkSeaGreen;
+            button1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.Location = new Point(28, 430);
             button1.Name = "button1";
             button1.Size = new Size(119, 45);
             button1.TabIndex = 0;
             button1.Text = "Start Server";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // btn_stopServer
             // 
-            btn_stopServer.Location = new Point(179, 376);
+            btn_stopServer.BackColor = Color.Salmon;
+            btn_stopServer.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_stopServer.Location = new Point(153, 430);
             btn_stopServer.Name = "btn_stopServer";
             btn_stopServer.Size = new Size(119, 45);
             btn_stopServer.TabIndex = 1;
             btn_stopServer.Text = "Stop Server";
-            btn_stopServer.UseVisualStyleBackColor = true;
+            btn_stopServer.UseVisualStyleBackColor = false;
             btn_stopServer.Click += btn_stopServer_Click;
             // 
             // textBox_Account
             // 
-            textBox_Account.Location = new Point(54, 54);
+            textBox_Account.Location = new Point(28, 108);
             textBox_Account.Name = "textBox_Account";
             textBox_Account.Size = new Size(341, 23);
             textBox_Account.TabIndex = 2;
@@ -101,7 +113,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(54, 36);
+            label1.Location = new Point(28, 90);
             label1.Name = "label1";
             label1.Size = new Size(87, 15);
             label1.TabIndex = 3;
@@ -110,7 +122,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(54, 82);
+            label2.Location = new Point(28, 136);
             label2.Name = "label2";
             label2.Size = new Size(49, 15);
             label2.TabIndex = 5;
@@ -118,7 +130,7 @@
             // 
             // textBox_Certifier
             // 
-            textBox_Certifier.Location = new Point(54, 100);
+            textBox_Certifier.Location = new Point(28, 154);
             textBox_Certifier.Name = "textBox_Certifier";
             textBox_Certifier.Size = new Size(341, 23);
             textBox_Certifier.TabIndex = 4;
@@ -126,7 +138,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(54, 174);
+            label3.Location = new Point(28, 228);
             label3.Name = "label3";
             label3.Size = new Size(32, 15);
             label3.TabIndex = 9;
@@ -134,7 +146,7 @@
             // 
             // textBox_Core
             // 
-            textBox_Core.Location = new Point(54, 192);
+            textBox_Core.Location = new Point(28, 246);
             textBox_Core.Name = "textBox_Core";
             textBox_Core.Size = new Size(341, 23);
             textBox_Core.TabIndex = 8;
@@ -142,7 +154,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(54, 128);
+            label4.Location = new Point(28, 182);
             label4.Name = "label4";
             label4.Size = new Size(55, 15);
             label4.TabIndex = 7;
@@ -150,7 +162,7 @@
             // 
             // textBox_Database
             // 
-            textBox_Database.Location = new Point(54, 146);
+            textBox_Database.Location = new Point(28, 200);
             textBox_Database.Name = "textBox_Database";
             textBox_Database.Size = new Size(341, 23);
             textBox_Database.TabIndex = 6;
@@ -158,7 +170,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(54, 313);
+            label5.Location = new Point(28, 367);
             label5.Name = "label5";
             label5.Size = new Size(39, 15);
             label5.TabIndex = 15;
@@ -166,7 +178,7 @@
             // 
             // textBox_World
             // 
-            textBox_World.Location = new Point(54, 331);
+            textBox_World.Location = new Point(28, 385);
             textBox_World.Name = "textBox_World";
             textBox_World.Size = new Size(341, 23);
             textBox_World.TabIndex = 14;
@@ -174,7 +186,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(54, 267);
+            label6.Location = new Point(28, 321);
             label6.Name = "label6";
             label6.Size = new Size(40, 15);
             label6.TabIndex = 13;
@@ -182,7 +194,7 @@
             // 
             // textBox_Cache
             // 
-            textBox_Cache.Location = new Point(54, 285);
+            textBox_Cache.Location = new Point(28, 339);
             textBox_Cache.Name = "textBox_Cache";
             textBox_Cache.Size = new Size(341, 23);
             textBox_Cache.TabIndex = 12;
@@ -190,7 +202,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(54, 221);
+            label7.Location = new Point(28, 275);
             label7.Name = "label7";
             label7.Size = new Size(37, 15);
             label7.TabIndex = 11;
@@ -198,7 +210,7 @@
             // 
             // textBox_Login
             // 
-            textBox_Login.Location = new Point(54, 239);
+            textBox_Login.Location = new Point(28, 293);
             textBox_Login.Name = "textBox_Login";
             textBox_Login.Size = new Size(341, 23);
             textBox_Login.TabIndex = 10;
@@ -206,7 +218,7 @@
             // Status_Account
             // 
             Status_Account.BackColor = Color.Red;
-            Status_Account.Location = new Point(29, 56);
+            Status_Account.Location = new Point(3, 110);
             Status_Account.Name = "Status_Account";
             Status_Account.Size = new Size(19, 20);
             Status_Account.TabIndex = 16;
@@ -214,7 +226,7 @@
             // Status_Certifier
             // 
             Status_Certifier.BackColor = Color.Red;
-            Status_Certifier.Location = new Point(29, 100);
+            Status_Certifier.Location = new Point(3, 154);
             Status_Certifier.Name = "Status_Certifier";
             Status_Certifier.Size = new Size(19, 20);
             Status_Certifier.TabIndex = 17;
@@ -222,7 +234,7 @@
             // Status_Database
             // 
             Status_Database.BackColor = Color.Red;
-            Status_Database.Location = new Point(29, 146);
+            Status_Database.Location = new Point(3, 200);
             Status_Database.Name = "Status_Database";
             Status_Database.Size = new Size(19, 20);
             Status_Database.TabIndex = 17;
@@ -230,7 +242,7 @@
             // Status_Core
             // 
             Status_Core.BackColor = Color.Red;
-            Status_Core.Location = new Point(29, 192);
+            Status_Core.Location = new Point(3, 246);
             Status_Core.Name = "Status_Core";
             Status_Core.Size = new Size(19, 20);
             Status_Core.TabIndex = 17;
@@ -238,7 +250,7 @@
             // Status_Login
             // 
             Status_Login.BackColor = Color.Red;
-            Status_Login.Location = new Point(29, 239);
+            Status_Login.Location = new Point(3, 293);
             Status_Login.Name = "Status_Login";
             Status_Login.Size = new Size(19, 20);
             Status_Login.TabIndex = 17;
@@ -246,7 +258,7 @@
             // Status_Cache
             // 
             Status_Cache.BackColor = Color.Red;
-            Status_Cache.Location = new Point(29, 285);
+            Status_Cache.Location = new Point(3, 339);
             Status_Cache.Name = "Status_Cache";
             Status_Cache.Size = new Size(19, 20);
             Status_Cache.TabIndex = 17;
@@ -254,24 +266,27 @@
             // Status_World
             // 
             Status_World.BackColor = Color.Red;
-            Status_World.Location = new Point(29, 331);
+            Status_World.Location = new Point(3, 385);
             Status_World.Name = "Status_World";
             Status_World.Size = new Size(19, 20);
             Status_World.TabIndex = 17;
             // 
             // button2
             // 
-            button2.Location = new Point(304, 376);
+            button2.BackColor = SystemColors.GradientActiveCaption;
+            button2.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.Location = new Point(278, 430);
             button2.Name = "button2";
             button2.Size = new Size(119, 45);
             button2.TabIndex = 18;
             button2.Text = "Restart Server";
-            button2.UseVisualStyleBackColor = true;
+            button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
             // button3
             // 
-            button3.Location = new Point(28, 169);
+            button3.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            button3.Location = new Point(29, 89);
             button3.Name = "button3";
             button3.Size = new Size(119, 45);
             button3.TabIndex = 19;
@@ -281,7 +296,8 @@
             // 
             // button4
             // 
-            button4.Location = new Point(153, 169);
+            button4.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            button4.Location = new Point(154, 89);
             button4.Name = "button4";
             button4.Size = new Size(119, 45);
             button4.TabIndex = 20;
@@ -290,7 +306,8 @@
             // 
             // button5
             // 
-            button5.Location = new Point(278, 169);
+            button5.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            button5.Location = new Point(279, 89);
             button5.Name = "button5";
             button5.Size = new Size(119, 45);
             button5.TabIndex = 21;
@@ -306,9 +323,9 @@
             groupBox1.Controls.Add(button3);
             groupBox1.Controls.Add(textBox_Client);
             groupBox1.Controls.Add(button4);
-            groupBox1.Location = new Point(522, 45);
+            groupBox1.Location = new Point(522, 24);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(464, 251);
+            groupBox1.Size = new Size(464, 202);
             groupBox1.TabIndex = 22;
             groupBox1.TabStop = false;
             groupBox1.Text = "Client";
@@ -349,7 +366,7 @@
             // 
             // button_account_ini
             // 
-            button_account_ini.Location = new Point(401, 54);
+            button_account_ini.Location = new Point(375, 108);
             button_account_ini.Name = "button_account_ini";
             button_account_ini.Size = new Size(43, 23);
             button_account_ini.TabIndex = 23;
@@ -359,7 +376,7 @@
             // 
             // button_certifier_ini
             // 
-            button_certifier_ini.Location = new Point(401, 100);
+            button_certifier_ini.Location = new Point(375, 154);
             button_certifier_ini.Name = "button_certifier_ini";
             button_certifier_ini.Size = new Size(43, 23);
             button_certifier_ini.TabIndex = 24;
@@ -369,7 +386,7 @@
             // 
             // button_database_ini
             // 
-            button_database_ini.Location = new Point(401, 146);
+            button_database_ini.Location = new Point(375, 200);
             button_database_ini.Name = "button_database_ini";
             button_database_ini.Size = new Size(43, 23);
             button_database_ini.TabIndex = 25;
@@ -379,7 +396,7 @@
             // 
             // button_core_ini
             // 
-            button_core_ini.Location = new Point(401, 192);
+            button_core_ini.Location = new Point(375, 246);
             button_core_ini.Name = "button_core_ini";
             button_core_ini.Size = new Size(43, 23);
             button_core_ini.TabIndex = 26;
@@ -389,7 +406,7 @@
             // 
             // button_login_ini
             // 
-            button_login_ini.Location = new Point(401, 239);
+            button_login_ini.Location = new Point(375, 293);
             button_login_ini.Name = "button_login_ini";
             button_login_ini.Size = new Size(43, 23);
             button_login_ini.TabIndex = 27;
@@ -399,7 +416,7 @@
             // 
             // button_cache_ini
             // 
-            button_cache_ini.Location = new Point(401, 285);
+            button_cache_ini.Location = new Point(375, 339);
             button_cache_ini.Name = "button_cache_ini";
             button_cache_ini.Size = new Size(43, 23);
             button_cache_ini.TabIndex = 28;
@@ -409,7 +426,7 @@
             // 
             // button_world_ini
             // 
-            button_world_ini.Location = new Point(401, 331);
+            button_world_ini.Location = new Point(375, 385);
             button_world_ini.Name = "button_world_ini";
             button_world_ini.Size = new Size(43, 23);
             button_world_ini.TabIndex = 29;
@@ -417,50 +434,117 @@
             button_world_ini.UseVisualStyleBackColor = true;
             button_world_ini.Click += button_world_ini_Click;
             // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(textBox_waitingTime);
+            groupBox2.Controls.Add(label9);
+            groupBox2.Controls.Add(textBox_Account);
+            groupBox2.Controls.Add(button_world_ini);
+            groupBox2.Controls.Add(button1);
+            groupBox2.Controls.Add(button_cache_ini);
+            groupBox2.Controls.Add(btn_stopServer);
+            groupBox2.Controls.Add(button_login_ini);
+            groupBox2.Controls.Add(label1);
+            groupBox2.Controls.Add(button_core_ini);
+            groupBox2.Controls.Add(textBox_Certifier);
+            groupBox2.Controls.Add(button_database_ini);
+            groupBox2.Controls.Add(label2);
+            groupBox2.Controls.Add(button_certifier_ini);
+            groupBox2.Controls.Add(textBox_Database);
+            groupBox2.Controls.Add(button_account_ini);
+            groupBox2.Controls.Add(label4);
+            groupBox2.Controls.Add(textBox_Core);
+            groupBox2.Controls.Add(button2);
+            groupBox2.Controls.Add(label3);
+            groupBox2.Controls.Add(Status_World);
+            groupBox2.Controls.Add(textBox_Login);
+            groupBox2.Controls.Add(Status_Cache);
+            groupBox2.Controls.Add(label7);
+            groupBox2.Controls.Add(Status_Login);
+            groupBox2.Controls.Add(textBox_Cache);
+            groupBox2.Controls.Add(Status_Core);
+            groupBox2.Controls.Add(label6);
+            groupBox2.Controls.Add(Status_Database);
+            groupBox2.Controls.Add(textBox_World);
+            groupBox2.Controls.Add(Status_Certifier);
+            groupBox2.Controls.Add(label5);
+            groupBox2.Controls.Add(Status_Account);
+            groupBox2.Location = new Point(12, 24);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(504, 572);
+            groupBox2.TabIndex = 30;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Server";
+            // 
+            // button6
+            // 
+            button6.BackColor = SystemColors.Control;
+            button6.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            button6.Location = new Point(6, 79);
+            button6.Name = "button6";
+            button6.Size = new Size(139, 51);
+            button6.TabIndex = 32;
+            button6.Text = "Update Config File";
+            button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
+            // 
+            // textBox_waitingTime
+            // 
+            textBox_waitingTime.Location = new Point(6, 39);
+            textBox_waitingTime.Name = "textBox_waitingTime";
+            textBox_waitingTime.Size = new Size(100, 23);
+            textBox_waitingTime.TabIndex = 31;
+            textBox_waitingTime.TextChanged += textBox_waitingTime_TextChanged;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(6, 21);
+            label9.Name = "label9";
+            label9.Size = new Size(192, 15);
+            label9.TabIndex = 30;
+            label9.Text = "Waiting Time Between Server Starts";
+            // 
+            // groupBox3
+            // 
+            groupBox3.Controls.Add(button7);
+            groupBox3.Controls.Add(button6);
+            groupBox3.Location = new Point(525, 409);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(461, 201);
+            groupBox3.TabIndex = 31;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Tool";
+            // 
+            // button7
+            // 
+            button7.BackColor = SystemColors.Control;
+            button7.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            button7.Location = new Point(6, 22);
+            button7.Name = "button7";
+            button7.Size = new Size(139, 51);
+            button7.TabIndex = 33;
+            button7.Text = "Open Config";
+            button7.UseVisualStyleBackColor = false;
+            button7.Click += button7_Click;
+            // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1043, 608);
-            Controls.Add(button_world_ini);
-            Controls.Add(button_cache_ini);
-            Controls.Add(button_login_ini);
-            Controls.Add(button_core_ini);
-            Controls.Add(button_database_ini);
-            Controls.Add(button_certifier_ini);
-            Controls.Add(button_account_ini);
+            Controls.Add(groupBox3);
+            Controls.Add(groupBox2);
             Controls.Add(groupBox1);
-            Controls.Add(button2);
-            Controls.Add(Status_World);
-            Controls.Add(Status_Cache);
-            Controls.Add(Status_Login);
-            Controls.Add(Status_Core);
-            Controls.Add(Status_Database);
-            Controls.Add(Status_Certifier);
-            Controls.Add(Status_Account);
-            Controls.Add(label5);
-            Controls.Add(textBox_World);
-            Controls.Add(label6);
-            Controls.Add(textBox_Cache);
-            Controls.Add(label7);
-            Controls.Add(textBox_Login);
-            Controls.Add(label3);
-            Controls.Add(textBox_Core);
-            Controls.Add(label4);
-            Controls.Add(textBox_Database);
-            Controls.Add(label2);
-            Controls.Add(textBox_Certifier);
-            Controls.Add(label1);
-            Controls.Add(textBox_Account);
-            Controls.Add(btn_stopServer);
-            Controls.Add(button1);
             Name = "Main";
             Text = "Flyff Server Manager";
             Load += Form1_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
+            groupBox3.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -504,5 +588,11 @@
         private Button button_cache_ini;
         private Button button_client_ini;
         private Button button_world_ini;
+        private GroupBox groupBox2;
+        private TextBox textBox_waitingTime;
+        private Label label9;
+        private Button button6;
+        private GroupBox groupBox3;
+        private Button button7;
     }
 }

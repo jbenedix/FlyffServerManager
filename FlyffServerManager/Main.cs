@@ -1,5 +1,6 @@
 using System.Configuration;
 using System.Diagnostics;
+using System.Text;
 
 namespace FlyffServerManager
 {
@@ -13,6 +14,7 @@ namespace FlyffServerManager
         public string cache { get; set; }
         public string world { get; set; }
         public string scriptFolder { get; set; }
+        public int waitingTimeBetweenStarts { get; set; }
 
         public string client { get; set; }
 
@@ -107,6 +109,7 @@ namespace FlyffServerManager
             textBox_Login.DataBindings.Add("Text", this, "login");
             textBox_World.DataBindings.Add("Text", this, "world");
             textBox_Client.DataBindings.Add("Text", this, "client");
+            textBox_waitingTime.DataBindings.Add("Text", this, "waitingTimeBetweenStarts");
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -123,27 +126,27 @@ namespace FlyffServerManager
             {
                 accountProcess = Process.Start(startInfoAccount);
                 Status_Account.BackColor = Color.Green;
-                Thread.Sleep(2000);
+                Thread.Sleep(waitingTimeBetweenStarts);
 
                 certifierProcess = Process.Start(startInfoCertifier);
                 Status_Certifier.BackColor = Color.Green;
-                Thread.Sleep(2000);
+                Thread.Sleep(waitingTimeBetweenStarts);
 
                 databaseProcess = Process.Start(startInfoDatabase);
                 Status_Database.BackColor = Color.Green;
-                Thread.Sleep(2000);
+                Thread.Sleep(waitingTimeBetweenStarts);
 
                 coreProcess = Process.Start(startInfoCore);
                 Status_Core.BackColor = Color.Green;
-                Thread.Sleep(2000);
+                Thread.Sleep(waitingTimeBetweenStarts);
 
                 loginProcess = Process.Start(startInfoLogin);
                 Status_Login.BackColor = Color.Green;
-                Thread.Sleep(2000);
+                Thread.Sleep(waitingTimeBetweenStarts);
 
                 cacheProcess = Process.Start(startInfoCache);
                 Status_Cache.BackColor = Color.Green;
-                Thread.Sleep(2000);
+                Thread.Sleep(waitingTimeBetweenStarts);
 
                 worldProcess = Process.Start(startInfoWorld);
                 Status_World.BackColor = Color.Green;
@@ -204,45 +207,56 @@ namespace FlyffServerManager
             foreach (var line in configData)
             {
                 //Dont check Comments
-                if (!line.StartsWith("#"))
+                try
                 {
-                    // I prefer if/else if over switch/case
-                    if (line.Split('=').First() == "account")
+                    if (!line.StartsWith("#"))
                     {
-                        account = line.Split("=").Last();
+                        // I prefer if/else if over switch/case
+                        if (line.Split('=').First() == "account")
+                        {
+                            account = line.Split("=").Last();
+                        }
+                        else if (line.Split('=').First() == "certifier")
+                        {
+                            certifier = line.Split("=").Last();
+                        }
+                        else if (line.Split('=').First() == "database")
+                        {
+                            database = line.Split("=").Last();
+                        }
+                        else if (line.Split('=').First() == "core")
+                        {
+                            core = line.Split("=").Last();
+                        }
+                        else if (line.Split('=').First() == "login")
+                        {
+                            login = line.Split("=").Last();
+                        }
+                        else if (line.Split('=').First() == "cache")
+                        {
+                            cache = line.Split("=").Last();
+                        }
+                        else if (line.Split('=').First() == "world")
+                        {
+                            world = line.Split("=").Last();
+                        }
+                        else if (line.Split('=').First() == "client")
+                        {
+                            client = line.Split("=").Last();
+                        }
+                        else if (line.Split('=').First() == "scriptFolder")
+                        {
+                            scriptFolder = line.Split("=").Last();
+                        }
+                        else if (line.Split('=').First() == "waitingTimeBetweenStarts")
+                        {
+                            waitingTimeBetweenStarts = int.Parse(line.Split("=").Last());
+                        }
                     }
-                    else if (line.Split('=').First() == "certifier")
-                    {
-                        certifier = line.Split("=").Last();
-                    }
-                    else if (line.Split('=').First() == "database")
-                    {
-                        database = line.Split("=").Last();
-                    }
-                    else if (line.Split('=').First() == "core")
-                    {
-                        core = line.Split("=").Last();
-                    }
-                    else if (line.Split('=').First() == "login")
-                    {
-                        login = line.Split("=").Last();
-                    }
-                    else if (line.Split('=').First() == "cache")
-                    {
-                        cache = line.Split("=").Last();
-                    }
-                    else if (line.Split('=').First() == "world")
-                    {
-                        world = line.Split("=").Last();
-                    }
-                    else if (line.Split('=').First() == "client")
-                    {
-                        client = line.Split("=").Last();
-                    }
-                    else if (line.Split('=').First() == "scriptFolder")
-                    {
-                        scriptFolder = line.Split("=").Last();
-                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
                 }
             }
         }
@@ -285,6 +299,82 @@ namespace FlyffServerManager
         private void button_client_ini_Click(object sender, EventArgs e)
         {
             Process.Start("notepad", Path.GetDirectoryName(client) + @"\neuz.ini");
+        }
+
+        private void textBox_waitingTime_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                waitingTimeBetweenStarts = int.Parse(textBox_waitingTime.Text);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            var configData = File.ReadAllLines(Directory.GetCurrentDirectory() + @"\config.ini");
+            List<string> newConfig = new List<string>();
+            foreach (var line in configData)
+            {
+                if (!line.StartsWith("#"))
+                {
+                    // I prefer if/else if over switch/case
+                    if (line.Split('=').First() == "account")
+                    {
+                        newConfig.Add("account=" + account);
+                    }
+                    else if (line.Split('=').First() == "certifier")
+                    {
+                        newConfig.Add("certifier=" + certifier);
+                    }
+                    else if (line.Split('=').First() == "database")
+                    {
+                        newConfig.Add("database=" + database);
+                    }
+                    else if (line.Split('=').First() == "core")
+                    {
+                        newConfig.Add("core=" + core);
+                    }
+                    else if (line.Split('=').First() == "login")
+                    {
+                        newConfig.Add("login=" + login);
+                    }
+                    else if (line.Split('=').First() == "cache")
+                    {
+                        newConfig.Add("cache=" + cache);
+                    }
+                    else if (line.Split('=').First() == "world")
+                    {
+                        newConfig.Add("world=" + world);
+                    }
+                    else if (line.Split('=').First() == "client")
+                    {
+                        newConfig.Add("client=" + client);
+                    }
+                    else if (line.Split('=').First() == "scriptFolder")
+                    {
+                        newConfig.Add("scriptFolder=" + scriptFolder);
+                    }
+                    else if (line.Split('=').First() == "waitingTimeBetweenStarts")
+                    {
+                        newConfig.Add("waitingTimeBetweenStarts=" + waitingTimeBetweenStarts);
+                    }
+                }
+                else
+                {
+                    newConfig.Add(line);
+                }
+            }
+            File.WriteAllLines(Directory.GetCurrentDirectory() + @"\config.ini", newConfig, Encoding.Default);
+            MessageBox.Show("Config was updated successfully");
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Process.Start("notepad", Directory.GetCurrentDirectory() + @"\config.ini");
         }
     }
 }
