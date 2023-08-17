@@ -40,14 +40,15 @@ namespace FlyffServerManager
         public Main()
         {
             InitializeComponent();
-            account = ConfigurationManager.AppSettings["account"];
-            certifier = ConfigurationManager.AppSettings["certifier"];
-            database = ConfigurationManager.AppSettings["database"];
-            core = ConfigurationManager.AppSettings["core"];
-            login = ConfigurationManager.AppSettings["login"];
-            cache = ConfigurationManager.AppSettings["cache"];
-            world = ConfigurationManager.AppSettings["world"];
-            client = ConfigurationManager.AppSettings["client"];
+            LoadConfigFile();
+            //account = ConfigurationManager.AppSettings["account"];
+            //certifier = ConfigurationManager.AppSettings["certifier"];
+            //database = ConfigurationManager.AppSettings["database"];
+            //core = ConfigurationManager.AppSettings["core"];
+            //login = ConfigurationManager.AppSettings["login"];
+            //cache = ConfigurationManager.AppSettings["cache"];
+            //world = ConfigurationManager.AppSettings["world"];
+            //client = ConfigurationManager.AppSettings["client"];
 
             startInfoAccount = new ProcessStartInfo
             {
@@ -193,6 +194,52 @@ namespace FlyffServerManager
         {
             clientProcess = Process.Start(startInfoClient);
             Status_Client.BackColor = Color.Green;
+        }
+        void LoadConfigFile()
+        {
+            var configData = File.ReadAllLines(Directory.GetCurrentDirectory() + @"\config.ini");
+
+            //Go Thorugh each line and check config
+            foreach (var line in configData)
+            {
+                //Dont check Comments
+                if (!line.StartsWith("#"))
+                {
+                    // I prefer if/else if over switch/case
+                    if (line.Split('=').First() == "account")
+                    {
+                        account = line.Split("=").Last();
+                    }
+                    else if (line.Split('=').First() == "certifier")
+                    {
+                        certifier = line.Split("=").Last();
+                    }
+                    else if (line.Split('=').First() == "database")
+                    {
+                        database = line.Split("=").Last();
+                    }
+                    else if (line.Split('=').First() == "core")
+                    {
+                        core = line.Split("=").Last();
+                    }
+                    else if (line.Split('=').First() == "login")
+                    {
+                        login = line.Split("=").Last();
+                    }
+                    else if (line.Split('=').First() == "cache")
+                    {
+                        cache = line.Split("=").Last();
+                    }
+                    else if (line.Split('=').First() == "world")
+                    {
+                        world = line.Split("=").Last();
+                    }
+                    else if (line.Split('=').First() == "client")
+                    {
+                        client = line.Split("=").Last();
+                    }
+                }
+            }
         }
     }
 }
